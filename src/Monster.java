@@ -5,8 +5,8 @@ public class Monster {
 	//string for fight to return what happens 
 	private int maxHealth,str,stm,agi,healthRemaining,damageDealt;
 	private String name;
-	private boolean dead;
-	public  Monster(int str, int stm, int agi, String name )
+	private boolean dead,fiery,onFire,poisoner,poisoned,icy,iced,shocky,shocked;
+	public  Monster(int str, int stm, int agi, boolean fire, boolean poison, boolean ice, boolean shock, String name )
 	{
 		this.maxHealth=(500+(stm*25));
 		this.healthRemaining=maxHealth;
@@ -16,6 +16,10 @@ public class Monster {
 		this.name= name;
 		this.damageDealt=0;
 		dead=false;
+		fiery=fire;
+		poisoner=poison;
+		icy=ice;
+		shocky=shock;
 		
 	}
 	/**
@@ -46,6 +50,14 @@ public class Monster {
 	}
 	public  String fight(Monster other)
 	{
+		this.onFire=this.onFire(other);
+		other.onFire=other.onFire(this);
+		poisoned=this.poisoned(other);
+		other.poisoned=other.poisoned(this);
+		this.iced=this.iced(other);
+		other.iced=other.iced(this);
+		this.shocked=this.shocked(other);
+		other.shocked=other.shocked(this);
 		String aTotal = "";
 		String bTotal = "";
 		boolean crita=this.crit(this.str);
@@ -179,6 +191,25 @@ public class Monster {
 	public boolean getDead(){
 		return dead;
 	}
+	public boolean onFire(Monster enemyMonster)
+	{
+		if(enemyMonster.fiery)return true;
+		else return false;
+	}
+	public boolean poisoned(Monster enemyMonster)
+	{
+		if(enemyMonster.poisoner)return true;
+		else return false;
+	}public boolean iced(Monster enemyMonster)
+	{
+		if(enemyMonster.icy)return true;
+		else return false;
+	}public boolean shocked(Monster enemyMonster)
+	{
+		if(enemyMonster.shocky)return true;
+		else return false;
+	}
+	
 }
 
 
