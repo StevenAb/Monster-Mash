@@ -17,6 +17,7 @@ public class MonsterScene extends Applet implements KeyListener{
 	int y3 = 100;
 	int k =0;
 	int round=1;
+    boolean arm1=false,arm2=false,wep1=false,wep2=false,j1=false,j2=false;
 	Monster m1;
 	Monster m2;
 	String result ="";
@@ -74,11 +75,11 @@ public class MonsterScene extends Applet implements KeyListener{
 			Font font3 = new Font("Arial", Font.BOLD, 25);
 			g2d.setFont(font3);
 
-			g.drawString("•Strength - Increases base damage by 5% and increases critical strike chance by 10%", x2-50, y2);	
+			g.drawString("ï¿½Strength - Increases base damage by 5% and increases critical strike chance by 10%", x2-50, y2);	
 			g.drawString("Critical strikes do 150% of base damage", x2, y2+35);
-			g.drawString("•Agility - Increases chance of dodging enemy attacks by 4%", x2-50, y2+70);
+			g.drawString("ï¿½Agility - Increases chance of dodging enemy attacks by 4%", x2-50, y2+70);
 			g.drawString("Dodging makes your monster take no damage", x2, y2+105);
-			g.drawString("•Stamina - Increases base health by 25 and increases damage reduction chance by 10%", x2-50, y2+140);
+			g.drawString("ï¿½Stamina - Increases base health by 25 and increases damage reduction chance by 10%", x2-50, y2+140);
 			g.drawString("Reduction of total damage by 5% per point", x2, y2+175);
 
 			g.setColor(Color.CYAN);
