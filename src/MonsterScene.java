@@ -116,9 +116,9 @@ public class MonsterScene extends Applet implements KeyListener{
 			
 		}else if (k==49&&char1)
 		{
-			ptCounter++;
 			if(ptCounter<5&&str1<=5)
 			{
+                ptCounter++;
 				str1++;
 			}else if (ptCounter==5){
 				char1=false;
@@ -127,9 +127,9 @@ public class MonsterScene extends Applet implements KeyListener{
 			}
 		}else if (k==50&&char1)
 		{
-			ptCounter++;
-			if(ptCounter<5&&str1<=5)
+			if(ptCounter<5&&agi1<=5)
 			{
+                ptCounter++;
 				agi1++;
 			}else if (ptCounter==5){
 				char1=false;
@@ -138,20 +138,55 @@ public class MonsterScene extends Applet implements KeyListener{
 			}
 		}else if (k==51&&char1)
 		{
-			ptCounter++;
-			if(ptCounter<5&&str1<=5)
+			if(ptCounter<5&&stm1<=5)
 			{
+                ptCounter++;
 				stm1++;
 			}else if (ptCounter==5){
 				char1=false;
 				char2=true;
 				ptCounter=0;
 			}
-		}else if (k==49&&char2)
+		}else if (k==52&&char1)
+        {
+            if(ptCounter<5&&arm1==false)
+            {
+                ptCounter++;
+                stm1+=3;
+                arm1=true;
+            }else if (ptCounter==5) {
+                char1 = false;
+                char2 = true;
+                ptCounter = 0;
+            }
+        }else if (k==53&&char1)
+        {
+            if (ptCounter < 5 && wep1==false)
+            {
+                ptCounter++;
+                str1 += 3;
+                wep1 = true;
+            } else if (ptCounter == 5) {
+                char1 = false;
+                char2 = true;
+                ptCounter = 0;
+            }
+        }else if (k==54&&char1)
+        {
+            if (ptCounter < 5 && j1==false)
+            {
+                ptCounter++;
+                agi1+=3;
+                j1=true;
+            } else if (ptCounter == 5) {
+                char1 = false;
+                char2 = true;
+                ptCounter = 0;}
+        }else if (k==49&&char2)
 		{
-			ptCounter++;
 			if(ptCounter<5&&str2<=5)
 			{
+                ptCounter++;
 				str2++;
 			}else if (ptCounter==5){
 				char2=false;
@@ -160,9 +195,9 @@ public class MonsterScene extends Applet implements KeyListener{
 			}
 		}else if (k==50&&char2)
 		{
-			ptCounter++;
-			if(ptCounter<5&&str2<=5)
+			if(ptCounter<5&&agi2<=5)
 			{
+                ptCounter++;
 				agi2++;
 			}else if (ptCounter==5){
 				char2=false;
@@ -171,16 +206,48 @@ public class MonsterScene extends Applet implements KeyListener{
 			}
 		}else if (k==51&&char2)
 		{
-			ptCounter++;
-			if(ptCounter<5&&str2<=5)
+			if(ptCounter<5&&stm2<=5)
 			{
+                ptCounter++;
 				stm2++;
 			}else if (ptCounter==5){
 				char2=false;
 				main=true;
 				
 			}
-		}if (main)
+		}else if (k==52&&char2)
+        {
+            if(ptCounter<5&&arm2==false)
+            {
+                ptCounter++;
+                stm2+=3;
+                arm2=true;
+            }else if (ptCounter==5) {
+                char2=false;
+                main=true;
+            }
+        }else if (k==53&&char2)
+        {
+            if (ptCounter < 5 && wep2==false)
+            {
+                ptCounter++;
+                str2 += 3;
+                wep2 = true;
+            } else if (ptCounter == 5) {
+                char2=false;
+                main=true;
+            }
+        }else if (k==54&&char2)
+        {
+            if (ptCounter < 5 && j2==false)
+            {
+                ptCounter++;
+                agi2+=3;
+                j2=true;
+            } else if (ptCounter == 5) {
+                char2=false;
+                main=true;}
+        }if (main)
 		{
 			declare();
 			g.setColor(Color.BLACK);
